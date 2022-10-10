@@ -16,6 +16,7 @@ module.exports = {
 
     if (isNaN(Number(duration)))
       return res.json({ error: "Duration must be a number" });
+    req.body.duration = Number(duration);
 
     if (!date) req.body.date = new Date().toDateString();
     else req.body.date = new Date(date).toDateString();
